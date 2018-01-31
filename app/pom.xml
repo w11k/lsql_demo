@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.w11k.lsql_demo</groupId>
+        <artifactId>parent</artifactId>
+        <version>0.0.1</version>
+    </parent>
+
+    <artifactId>app</artifactId>
+    <packaging>jar</packaging>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.w11k.lsql_demo</groupId>
+            <artifactId>db</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.w11k.lsql</groupId>
+            <artifactId>lsql-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.w11k.lsql</groupId>
+            <artifactId>lsql-cli</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+        </plugins>
+    </build>
+
+</project>
+
