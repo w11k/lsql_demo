@@ -16,7 +16,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <lsql.version>0.32.6</lsql.version>
+        <lsql.version>0.32.7</lsql.version>
     </properties>
 
     <dependencyManagement>

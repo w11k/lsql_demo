@@ -8,15 +8,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="app" />
         <module name="db" />
-        <module name="db (1)" />
-        <module name="db (2)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="app" target="1.8" />
       <module name="db" target="1.8" />
-      <module name="db (1)" target="1.8" />
-      <module name="db (2)" target="1.8" />
       <module name="parent" target="1.8" />
     </bytecodeTargetLevel>
   </component>

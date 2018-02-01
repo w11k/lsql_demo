@@ -3,6 +3,7 @@ export namespace com_lsql_demo_db_schema_public {
         firstName: string;
         lastName: string;
         id: number;
+        age?: number;
     }
 }
 
@@ -22,10 +23,18 @@ export namespace com_lsql_demo_db_schema_public {
 }
 
 export namespace com_lsql_demo_db_personstmts {
+    export interface LoadAverageAgeByLastName {
+        lastName: string;
+        age: number;
+    }
+}
+
+export namespace com_lsql_demo_db_personstmts {
     export interface LoadPersonById {
         id: number;
         firstName: string;
         lastName: string;
+        age?: number;
     }
 }
 

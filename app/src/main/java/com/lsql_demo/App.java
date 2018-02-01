@@ -1,38 +1,42 @@
 package com.lsql_demo;
 
 import com.lsql_demo.db.PersonStmts;
+import com.lsql_demo.db.personstmts.LoadAverageAgeByLastName;
 import com.lsql_demo.db.personstmts.LoadPersonById;
 import com.lsql_demo.db.schema_public.Person_Row;
 import com.lsql_demo.db.schema_public.Person_Table;
-import com.w11k.lsql.LSql;
-import com.w11k.lsql.dialects.PostgresConfig;
-import com.w11k.lsql.jdbc.ConnectionProviders;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import javax.inject.Inject;
 import java.util.List;
 
 public final class App {
 
-    public static void main(String[] args) throws SQLException {
+    private final Person_Table personTable;
+    private final PersonStmts personStmts;
 
-        Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/lsql_demo", "lsql_demo", "lsql_demo");
-        connection.setAutoCommit(true);
-        LSql lSql = new LSql(PostgresConfig.class, ConnectionProviders.fromInstance(connection));
+    @Inject
+    public App(Person_Table personTable, PersonStmts personStmts) {
+        this.personTable = personTable;
+        this.personStmts = personStmts;
+    }
 
-        Person_Table personTable = new Person_Table(lSql);
-
+    public void run() {
         personTable.insert(new Person_Row()
-                .withFirstName("Foo")
-                .withLastName("Bar"));
+                .withFirstName("Max")
+                .withLastName("Power")
+                .withAge((int) (Math.random() * 100)));
 
-        PersonStmts personStmts = new PersonStmts(lSql);
         List<LoadPersonById> loadPersonById = personStmts.loadPersonById()
                 .withId(1)
                 .toList();
 
         System.out.println("loadPersonById = " + loadPersonById);
+
+        List<LoadAverageAgeByLastName> powerAvgAge = personStmts.loadAverageAgeByLastName()
+                .withLastName("Power")
+                .toList();
+
+        System.out.println("powerAvgAge = " + powerAvgAge);
     }
 
 }

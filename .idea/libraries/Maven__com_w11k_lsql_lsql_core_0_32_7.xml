@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.w11k.lsql:lsql-core:0.32.7">
+    <CLASSES>
+      <root url="jar://$M2_HOME$/com/w11k/lsql/lsql-core/0.32.7/lsql-core-0.32.7.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$M2_HOME$/com/w11k/lsql/lsql-core/0.32.7/lsql-core-0.32.7-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$M2_HOME$/com/w11k/lsql/lsql-core/0.32.7/lsql-core-0.32.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

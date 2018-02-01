@@ -91,7 +91,10 @@ public final class Flyway_Schema_History_Row implements com.w11k.lsql.TableRow, 
     // fields ----------
 
     @SuppressWarnings("unused")
-    public static final String FIELD_executionTime = "executionTime";
+    public static final String INTERNAL_FIELD_EXECUTIONTIME = "executionTime";
+
+    @SuppressWarnings("unused")
+    public static final String FIELD_EXECUTIONTIME = "executionTime";
 
     @javax.annotation.Nonnull public final java.lang.Integer executionTime;
 
@@ -103,7 +106,10 @@ public final class Flyway_Schema_History_Row implements com.w11k.lsql.TableRow, 
         return new Flyway_Schema_History_Row(executionTime,installedOn,installedRank,success,checksum,description,installedBy,type,version,script);
     }
     @SuppressWarnings("unused")
-    public static final String FIELD_installedOn = "installedOn";
+    public static final String INTERNAL_FIELD_INSTALLEDON = "installedOn";
+
+    @SuppressWarnings("unused")
+    public static final String FIELD_INSTALLEDON = "installedOn";
 
     @javax.annotation.Nonnull public final org.joda.time.DateTime installedOn;
 
@@ -115,7 +121,10 @@ public final class Flyway_Schema_History_Row implements com.w11k.lsql.TableRow, 
         return new Flyway_Schema_History_Row(executionTime,installedOn,installedRank,success,checksum,description,installedBy,type,version,script);
     }
     @SuppressWarnings("unused")
-    public static final String FIELD_installedRank = "installedRank";
+    public static final String INTERNAL_FIELD_INSTALLEDRANK = "installedRank";
+
+    @SuppressWarnings("unused")
+    public static final String FIELD_INSTALLEDRANK = "installedRank";
 
     @javax.annotation.Nonnull public final java.lang.Integer installedRank;
 
@@ -127,7 +136,10 @@ public final class Flyway_Schema_History_Row implements com.w11k.lsql.TableRow, 
         return new Flyway_Schema_History_Row(executionTime,installedOn,installedRank,success,checksum,description,installedBy,type,version,script);
     }
     @SuppressWarnings("unused")
-    public static final String FIELD_success = "success";
+    public static final String INTERNAL_FIELD_SUCCESS = "success";
+
+    @SuppressWarnings("unused")
+    public static final String FIELD_SUCCESS = "success";
 
     @javax.annotation.Nonnull public final java.lang.Boolean success;
 
@@ -139,7 +151,10 @@ public final class Flyway_Schema_History_Row implements com.w11k.lsql.TableRow, 
         return new Flyway_Schema_History_Row(executionTime,installedOn,installedRank,success,checksum,description,installedBy,type,version,script);
     }
     @SuppressWarnings("unused")
-    public static final String FIELD_checksum = "checksum";
+    public static final String INTERNAL_FIELD_CHECKSUM = "checksum";
+
+    @SuppressWarnings("unused")
+    public static final String FIELD_CHECKSUM = "checksum";
 
     @javax.annotation.Nullable public final java.lang.Integer checksum;
 
@@ -151,7 +166,10 @@ public final class Flyway_Schema_History_Row implements com.w11k.lsql.TableRow, 
         return new Flyway_Schema_History_Row(executionTime,installedOn,installedRank,success,checksum,description,installedBy,type,version,script);
     }
     @SuppressWarnings("unused")
-    public static final String FIELD_description = "description";
+    public static final String INTERNAL_FIELD_DESCRIPTION = "description";
+
+    @SuppressWarnings("unused")
+    public static final String FIELD_DESCRIPTION = "description";
 
     @javax.annotation.Nonnull public final java.lang.String description;
 
@@ -163,7 +181,10 @@ public final class Flyway_Schema_History_Row implements com.w11k.lsql.TableRow, 
         return new Flyway_Schema_History_Row(executionTime,installedOn,installedRank,success,checksum,description,installedBy,type,version,script);
     }
     @SuppressWarnings("unused")
-    public static final String FIELD_installedBy = "installedBy";
+    public static final String INTERNAL_FIELD_INSTALLEDBY = "installedBy";
+
+    @SuppressWarnings("unused")
+    public static final String FIELD_INSTALLEDBY = "installedBy";
 
     @javax.annotation.Nonnull public final java.lang.String installedBy;
 
@@ -175,7 +196,10 @@ public final class Flyway_Schema_History_Row implements com.w11k.lsql.TableRow, 
         return new Flyway_Schema_History_Row(executionTime,installedOn,installedRank,success,checksum,description,installedBy,type,version,script);
     }
     @SuppressWarnings("unused")
-    public static final String FIELD_type = "type";
+    public static final String INTERNAL_FIELD_TYPE = "type";
+
+    @SuppressWarnings("unused")
+    public static final String FIELD_TYPE = "type";
 
     @javax.annotation.Nonnull public final java.lang.String type;
 
@@ -187,7 +211,10 @@ public final class Flyway_Schema_History_Row implements com.w11k.lsql.TableRow, 
         return new Flyway_Schema_History_Row(executionTime,installedOn,installedRank,success,checksum,description,installedBy,type,version,script);
     }
     @SuppressWarnings("unused")
-    public static final String FIELD_version = "version";
+    public static final String INTERNAL_FIELD_VERSION = "version";
+
+    @SuppressWarnings("unused")
+    public static final String FIELD_VERSION = "version";
 
     @javax.annotation.Nullable public final java.lang.String version;
 
@@ -199,7 +226,10 @@ public final class Flyway_Schema_History_Row implements com.w11k.lsql.TableRow, 
         return new Flyway_Schema_History_Row(executionTime,installedOn,installedRank,success,checksum,description,installedBy,type,version,script);
     }
     @SuppressWarnings("unused")
-    public static final String FIELD_script = "script";
+    public static final String INTERNAL_FIELD_SCRIPT = "script";
+
+    @SuppressWarnings("unused")
+    public static final String FIELD_SCRIPT = "script";
 
     @javax.annotation.Nonnull public final java.lang.String script;
 
@@ -255,6 +285,21 @@ public final class Flyway_Schema_History_Row implements com.w11k.lsql.TableRow, 
             Object target = targetClass.newInstance();
             return this.as((T) target);
         } catch (Exception e) {throw new RuntimeException(e);}
+    }
+
+    public java.util.Map<String, Object> toInternalMap() {
+        java.util.Map<String, Object> map = new java.util.HashMap<>();
+        map.put("executionTime", this.executionTime);
+        map.put("installedOn", this.installedOn);
+        map.put("installedRank", this.installedRank);
+        map.put("success", this.success);
+        map.put("checksum", this.checksum);
+        map.put("description", this.description);
+        map.put("installedBy", this.installedBy);
+        map.put("type", this.type);
+        map.put("version", this.version);
+        map.put("script", this.script);
+        return map;
     }
 
     public java.util.Map<String, Object> toMap() {

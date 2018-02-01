@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="lsql_demo@localhost" uuid="9a918e92-cce2-4c45-a64b-3b5eaa7923fd">
-      <database-info product="PostgreSQL" version="10.1" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.1">
+    <data-source name="lsql_demo@localhost" uuid="1fe688ed-93b3-4af1-94c9-50d6db8cde0e">
+      <database-info product="PostgreSQL" version="10.1" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.2 JDBC4 (build 1003)">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
-      <secret-storage>master_key</secret-storage>
       <user-name>lsql_demo</user-name>
       <introspection-schemas>lsql_demo:public</introspection-schemas>
     </data-source>
