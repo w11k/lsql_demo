@@ -34,6 +34,16 @@ public final class Flyway_Schema_History_Row implements com.w11k.lsql.TableRow, 
         return (Flyway_Schema_History_Row) target;
     }
 
+    @SuppressWarnings("unused")
+    public static Flyway_Schema_History_Row fromInternalMap(java.util.Map<String, Object> internalMap) {
+        return new Flyway_Schema_History_Row((java.lang.String) internalMap.get("installed_by"), (java.lang.Boolean) internalMap.get("success"), (java.lang.Integer) internalMap.get("checksum"), (java.lang.String) internalMap.get("description"), (org.joda.time.DateTime) internalMap.get("installed_on"), (java.lang.String) internalMap.get("type"), (java.lang.String) internalMap.get("version"), (java.lang.String) internalMap.get("script"), (java.lang.Integer) internalMap.get("installed_rank"), (java.lang.Integer) internalMap.get("execution_time"));
+    }
+
+    @SuppressWarnings("unused")
+    public static Flyway_Schema_History_Row fromMap(java.util.Map<String, Object> map) {
+        return new Flyway_Schema_History_Row((java.lang.String) map.get("installedBy"), (java.lang.Boolean) map.get("success"), (java.lang.Integer) map.get("checksum"), (java.lang.String) map.get("description"), (org.joda.time.DateTime) map.get("installedOn"), (java.lang.String) map.get("type"), (java.lang.String) map.get("version"), (java.lang.String) map.get("script"), (java.lang.Integer) map.get("installedRank"), (java.lang.Integer) map.get("executionTime"));
+    }
+
     // constructors ----------
 
     @SuppressWarnings("ConstantConditions")
@@ -72,20 +82,6 @@ public final class Flyway_Schema_History_Row implements com.w11k.lsql.TableRow, 
         this.script = script;
         this.installedRank = installedRank;
         this.executionTime = executionTime;
-    }
-
-    @SuppressWarnings("unused")
-    public Flyway_Schema_History_Row(java.util.Map<String, Object> from) {
-        this.installedBy = (java.lang.String) from.get("installed_by");
-        this.success = (java.lang.Boolean) from.get("success");
-        this.checksum = (java.lang.Integer) from.get("checksum");
-        this.description = (java.lang.String) from.get("description");
-        this.installedOn = (org.joda.time.DateTime) from.get("installed_on");
-        this.type = (java.lang.String) from.get("type");
-        this.version = (java.lang.String) from.get("version");
-        this.script = (java.lang.String) from.get("script");
-        this.installedRank = (java.lang.Integer) from.get("installed_rank");
-        this.executionTime = (java.lang.Integer) from.get("execution_time");
     }
 
     // fields ----------

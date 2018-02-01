@@ -78,3 +78,17 @@ export namespace com_lsql_demo_db_com_lsql_demo_personstmts {
     }
 }
 
+export namespace com_lsql_demo_db {
+    export interface TestDtoRow {
+        firstName?: string;
+        lastName?: string;
+    }
+}
+
+export namespace com_lsql_demo_db {
+    export interface TestDtoMap {
+        firstName?: string;
+        lastName?: string;
+    }
+}
+
