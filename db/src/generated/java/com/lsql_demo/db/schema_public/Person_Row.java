@@ -4,20 +4,20 @@ import com.lsql_demo.db.structural_fields.*;
 import java.util.*;
 
 @SuppressWarnings({"Duplicates", "WeakerAccess"})
-public final class Person_Row implements com.w11k.lsql.TableRow, First_Name_String, Last_Name_String, Id_Integer, Age_Integer {
+public final class Person_Row implements com.w11k.lsql.TableRow, Last_Name_String, Id_Integer, First_Name_String, Age_Integer {
 
     // static methods ----------
 
     @SuppressWarnings("unchecked")
     public static <T extends 
-            First_Name_String
-            & Last_Name_String
+            Last_Name_String
             & Id_Integer
+            & First_Name_String
             & Age_Integer> Person_Row from(T source) {
         Object target = new Person_Row();
-        target = ((First_Name_String) target).withFirstName(source.getFirstName());
         target = ((Last_Name_String) target).withLastName(source.getLastName());
         target = ((Id_Integer) target).withId(source.getId());
+        target = ((First_Name_String) target).withFirstName(source.getFirstName());
         target = ((Age_Integer) target).withAge(source.getAge());
         return (Person_Row) target;
     }
@@ -26,54 +26,39 @@ public final class Person_Row implements com.w11k.lsql.TableRow, First_Name_Stri
 
     @SuppressWarnings("ConstantConditions")
     public Person_Row() {
-        this.firstName = null;
         this.lastName = null;
         this.id = null;
+        this.firstName = null;
         this.age = null;
     }
 
     @SuppressWarnings("NullableProblems")
     private Person_Row(
-            java.lang.String firstName,
             java.lang.String lastName,
             java.lang.Integer id,
+            java.lang.String firstName,
             java.lang.Integer age) {
-        this.firstName = firstName;
         this.lastName = lastName;
         this.id = id;
+        this.firstName = firstName;
         this.age = age;
     }
 
     @SuppressWarnings("unused")
     public Person_Row(java.util.Map<String, Object> from) {
-        this.firstName = (java.lang.String) from.get("firstName");
-        this.lastName = (java.lang.String) from.get("lastName");
+        this.lastName = (java.lang.String) from.get("last_name");
         this.id = (java.lang.Integer) from.get("id");
+        this.firstName = (java.lang.String) from.get("first_name");
         this.age = (java.lang.Integer) from.get("age");
     }
 
     // fields ----------
 
     @SuppressWarnings("unused")
-    public static final String INTERNAL_FIELD_FIRSTNAME = "firstName";
+    public static final String INTERNAL_FIELD_LAST_NAME = "last_name";
 
     @SuppressWarnings("unused")
-    public static final String FIELD_FIRSTNAME = "firstName";
-
-    @javax.annotation.Nonnull public final java.lang.String firstName;
-
-    @javax.annotation.Nonnull public java.lang.String getFirstName() {
-        return this.firstName;
-    }
-
-    public Person_Row withFirstName(@javax.annotation.Nonnull java.lang.String firstName) {
-        return new Person_Row(firstName,lastName,id,age);
-    }
-    @SuppressWarnings("unused")
-    public static final String INTERNAL_FIELD_LASTNAME = "lastName";
-
-    @SuppressWarnings("unused")
-    public static final String FIELD_LASTNAME = "lastName";
+    public static final String FIELD_LAST_NAME = "lastName";
 
     @javax.annotation.Nonnull public final java.lang.String lastName;
 
@@ -82,7 +67,7 @@ public final class Person_Row implements com.w11k.lsql.TableRow, First_Name_Stri
     }
 
     public Person_Row withLastName(@javax.annotation.Nonnull java.lang.String lastName) {
-        return new Person_Row(firstName,lastName,id,age);
+        return new Person_Row(lastName,id,firstName,age);
     }
     @SuppressWarnings("unused")
     public static final String INTERNAL_FIELD_ID = "id";
@@ -97,7 +82,22 @@ public final class Person_Row implements com.w11k.lsql.TableRow, First_Name_Stri
     }
 
     public Person_Row withId(@javax.annotation.Nonnull java.lang.Integer id) {
-        return new Person_Row(firstName,lastName,id,age);
+        return new Person_Row(lastName,id,firstName,age);
+    }
+    @SuppressWarnings("unused")
+    public static final String INTERNAL_FIELD_FIRST_NAME = "first_name";
+
+    @SuppressWarnings("unused")
+    public static final String FIELD_FIRST_NAME = "firstName";
+
+    @javax.annotation.Nonnull public final java.lang.String firstName;
+
+    @javax.annotation.Nonnull public java.lang.String getFirstName() {
+        return this.firstName;
+    }
+
+    public Person_Row withFirstName(@javax.annotation.Nonnull java.lang.String firstName) {
+        return new Person_Row(lastName,id,firstName,age);
     }
     @SuppressWarnings("unused")
     public static final String INTERNAL_FIELD_AGE = "age";
@@ -112,30 +112,30 @@ public final class Person_Row implements com.w11k.lsql.TableRow, First_Name_Stri
     }
 
     public Person_Row withAge(@javax.annotation.Nullable java.lang.Integer age) {
-        return new Person_Row(firstName,lastName,id,age);
+        return new Person_Row(lastName,id,firstName,age);
     }
 
     // class methods ----------
 
     @SuppressWarnings("unchecked")
     public <T extends 
-            First_Name_String
-            & Last_Name_String
+            Last_Name_String
             & Id_Integer
+            & First_Name_String
             & Age_Integer> T as(T targetStart) {
         Object target = targetStart;
-        target = ((First_Name_String) target).withFirstName(this.getFirstName());
         target = ((Last_Name_String) target).withLastName(this.getLastName());
         target = ((Id_Integer) target).withId(this.getId());
+        target = ((First_Name_String) target).withFirstName(this.getFirstName());
         target = ((Age_Integer) target).withAge(this.getAge());
         return (T) target;
     }
 
     @SuppressWarnings("unchecked")
     public <T extends 
-            First_Name_String
-            & Last_Name_String
+            Last_Name_String
             & Id_Integer
+            & First_Name_String
             & Age_Integer> T as(Class<? extends T> targetClass) {
         try {
             Object target = targetClass.newInstance();
@@ -145,18 +145,18 @@ public final class Person_Row implements com.w11k.lsql.TableRow, First_Name_Stri
 
     public java.util.Map<String, Object> toInternalMap() {
         java.util.Map<String, Object> map = new java.util.HashMap<>();
-        map.put("firstName", this.firstName);
-        map.put("lastName", this.lastName);
+        map.put("last_name", this.lastName);
         map.put("id", this.id);
+        map.put("first_name", this.firstName);
         map.put("age", this.age);
         return map;
     }
 
     public java.util.Map<String, Object> toMap() {
         java.util.Map<String, Object> map = new java.util.HashMap<>();
-        map.put("firstName", this.firstName);
         map.put("lastName", this.lastName);
         map.put("id", this.id);
+        map.put("firstName", this.firstName);
         map.put("age", this.age);
         return map;
     }
@@ -168,22 +168,22 @@ public final class Person_Row implements com.w11k.lsql.TableRow, First_Name_Stri
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Person_Row that = (Person_Row) o;
-        return     Objects.equals(firstName, that.firstName) && 
-            Objects.equals(lastName, that.lastName) && 
+        return     Objects.equals(lastName, that.lastName) && 
             Objects.equals(id, that.id) && 
+            Objects.equals(firstName, that.firstName) && 
             Objects.equals(age, that.age);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName, id, age);
+        return Objects.hash(lastName, id, firstName, age);
     }
 
     @Override
     public String toString() {
-        return "Person_Row{" + "firstName=" + firstName
-            + ", " + "lastName=" + lastName
+        return "Person_Row{" + "lastName=" + lastName
             + ", " + "id=" + id
+            + ", " + "firstName=" + firstName
             + ", " + "age=" + age + "}";
     }
 

@@ -13,7 +13,8 @@ url:jdbc:postgresql://localhost/lsql_demo \
 user:lsql_demo password:lsql_demo \
 package:com.lsql_demo.db \
 di:guice \
-sqlStatements:src/main/sql \
+sqlStatements:../app/src/main/java \
+dto:../app/src/main/java/com/lsql_demo \
 outDirJava:src/generated/java \
 outDirTypeScript:src/web \
 "

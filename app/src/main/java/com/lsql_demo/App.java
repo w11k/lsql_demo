@@ -1,8 +1,10 @@
 package com.lsql_demo;
 
-import com.lsql_demo.db.PersonStmts;
-import com.lsql_demo.db.personstmts.LoadAverageAgeByLastName;
-import com.lsql_demo.db.personstmts.LoadPersonById;
+import com.google.common.base.Optional;
+import com.lsql_demo.db.TestDto;
+import com.lsql_demo.db.com.lsql_demo.PersonStmts;
+import com.lsql_demo.db.com.lsql_demo.personstmts.LoadAverageAgeByLastName;
+import com.lsql_demo.db.com.lsql_demo.personstmts.LoadPersonById;
 import com.lsql_demo.db.schema_public.Person_Row;
 import com.lsql_demo.db.schema_public.Person_Table;
 
@@ -20,15 +22,25 @@ public final class App {
         this.personStmts = personStmts;
     }
 
+    /**
+     * dto: TestDto
+     * - firstName: string
+     * - lastName: string
+     */
     public void run() {
         personTable.insert(new Person_Row()
                 .withFirstName("Max")
                 .withLastName("Power")
-                .withAge((int) (Math.random() * 100)));
+                .withAge(50));
 
-        List<LoadPersonById> loadPersonById = personStmts.loadPersonById()
+        personTable.insert(new Person_Row()
+                .withFirstName("Max")
+                .withLastName("Power")
+                .withAge(60));
+
+        Optional<LoadPersonById> loadPersonById = personStmts.loadPersonById()
                 .withId(1)
-                .toList();
+                .first();
 
         System.out.println("loadPersonById = " + loadPersonById);
 
@@ -37,6 +49,9 @@ public final class App {
                 .toList();
 
         System.out.println("powerAvgAge = " + powerAvgAge);
+
+        TestDto testDto = TestDto.from(loadPersonById.get());
+        System.out.println("testDto = " + testDto);
     }
 
 }
