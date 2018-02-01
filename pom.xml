@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.w11k.lsql_demo</groupId>
-    <artifactId>parent</artifactId>
+    <artifactId>lsql_demo_parent</artifactId>
     <version>0.0.1</version>
     <packaging>pom</packaging>
 

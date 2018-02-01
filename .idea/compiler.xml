@@ -13,6 +13,7 @@
     <bytecodeTargetLevel>
       <module name="app" target="1.8" />
       <module name="db" target="1.8" />
+      <module name="lsql_demo" target="1.8" />
       <module name="parent" target="1.8" />
     </bytecodeTargetLevel>
   </component>
